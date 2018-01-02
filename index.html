@@ -91,22 +91,15 @@
         <p>pptp 하는 법 </p>
 <p>1 . pptp 설치<br> yum install ppp</p>
 <p>wget <a href="http://poptop.sourceforge.net/yum/beta/packages/pptpd-1.4.0-1.rhel5.1.x86_64.rpm" target="_blank" rel="noopener">http://poptop.sourceforge.net/yum/beta/packages/pptpd-1.4.0-1.rhel5.1.x86_64.rpm</a><br> rpm -Uvh pptpd-1.4.0-1.rhel5.1.x86_64.rpm</p>
-<ol>
-<li>설정파일 수정<br>/etc/pptpd.conf &lt; 파일 맨아래</li>
-</ol>
+<p>2 . 설정파일 수정<br>/etc/pptpd.conf &lt; 파일 맨아래</p>
 <p>localip 10.0.0.1       &lt;&lt;쓰고 싶은ip<br>remoteip 10.0.0.2-50   &lt;&lt; 쓰고싶은 ip</p>
 <p> /etc/ppp/options.pptpd</p>
 <p>#require-mppe-128 &lt;&lt; 주석처리 (안그럼 url 접속안됨)</p>
 <p>ms-dns 8.8.8.8   &lt;dns서버 설정<br>ms-dns 164.124.101.2</p>
-<ol>
-<li>계정설정</li>
-</ol>
+<p>3 . 계정설정</p>
 <p>/etc/ppp/chap-secrets</p>
-<h1 id="client-server-secret-IP-addresses"><a href="#client-server-secret-IP-addresses" class="headerlink" title="client    server  secret          IP addresses"></a>client    server  secret          IP addresses</h1><pre><code>kim     *       go0502go0502             *
-(ID) (VPN서버) (패스워드)        (client에 할당할 ip 지정해주어도 되고 *로 놓아도됨 , 지정 해주면 remoteip 에 있는 ip 작성)
-</code></pre><ol>
-<li>iptables에서 nat 설정</li>
-</ol>
+<p>#client    server  secret          IP addresses<br>    kim     <em>       go0502go0502             </em><br>    (ID) (VPN서버) (패스워드)        (client에 할당할 ip 지정해주어도 되고 *로 놓아도됨 , 지정 해주면 remoteip 에 있는 ip 작성)</p>
+<p>4 . iptables에서 nat 설정</p>
 <p>pptpd.conf 파일에 설정 해놓은 사설ip (ex 10.0.0.0) 대역을 써줍니다<br>/etc/sysconfig/iptables &lt;파일에 아래와 같이 작성해주어도 되고<br>*nat<br>:PREROUTING ACCEPT [1:60]<br>:POSTROUTING ACCEPT [0:0]<br>:OUTPUT ACCEPT [1:72]</p>
 <p>#-A POSTROUTING -o eth0 -j MASQUERADE  &lt;&lt;또는 이렇게<br>-A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE</p>
 <p>#iptables -t -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE  &lt;&lt; 명령어로 작성한다음 save 합니다.</p>
@@ -117,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chrammingjoo.github.io/2018/01/02/post/" data-id="cjbxe203h0001nvskwg5dzeup" class="article-share-link">Teilen</a>
+      <a data-url="http://chrammingjoo.github.io/2018/01/02/post/" data-id="cjbxe5fvz0001q3sk8wrd9523" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pptp/">pptp</a></li></ul>
@@ -164,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chrammingjoo.github.io/2018/01/02/hello-world/" data-id="cjbxe20310000nvskr8qr4ubt" class="article-share-link">Teilen</a>
+      <a data-url="http://chrammingjoo.github.io/2018/01/02/hello-world/" data-id="cjbxe5fvn0000q3sklcf13y0s" class="article-share-link">Teilen</a>
       
       
     </footer>
