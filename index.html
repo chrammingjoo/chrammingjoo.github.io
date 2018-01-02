@@ -104,8 +104,11 @@
 <li>계정설정</li>
 </ol>
 <p>/etc/ppp/chap-secrets</p>
-<p>#client    server  secret          IP addresses<br>    kim     <em>       go0502go0502             </em><br>    (ID) (VPN서버) (패스워드)        (client에 할당할 ip 지정해주어도 되고 *로 놓아도됨 , 지정 해주면 remoteip 에 있는 ip 작성)</p>
-<ol>
+<pre><code>\#client    server  secret          IP addresses
+  userid      \*    password         \*
+
+(ID) (VPN서버) (패스워드)        (client에 할당할 ip 지정해주어도 되고 *로 놓아도됨 , 지정 해주면 remoteip 에 있는 ip 작성)
+</code></pre><ol>
 <li>iptables에서 nat 설정</li>
 </ol>
 <p>pptpd.conf 파일에 설정 해놓은 사설ip (ex 10.0.0.0) 대역을 써줍니다<br>/etc/sysconfig/iptables &lt;파일에 아래와 같이 작성해주어도 되고<br>*nat<br>:PREROUTING ACCEPT [1:60]<br>:POSTROUTING ACCEPT [0:0]<br>:OUTPUT ACCEPT [1:72]</p>
@@ -118,7 +121,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chrammingjoo.github.io/2018/01/02/post/" data-id="cjbxea9o20001spskhs6tey1k" class="article-share-link">Teilen</a>
+      <a data-url="http://chrammingjoo.github.io/2018/01/02/post/" data-id="cjbxecxqa0001uvsk7nmhgah4" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pptp/">pptp</a></li></ul>
@@ -165,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chrammingjoo.github.io/2018/01/02/hello-world/" data-id="cjbxea9np0000spskxie1s4ct" class="article-share-link">Teilen</a>
+      <a data-url="http://chrammingjoo.github.io/2018/01/02/hello-world/" data-id="cjbxecxpu0000uvskz035g6ae" class="article-share-link">Teilen</a>
       
       
     </footer>
