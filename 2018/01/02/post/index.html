@@ -15,7 +15,7 @@
 <meta property="og:site_name" content=".charming daily.">
 <meta property="og:description" content="pptp 하는 법   pptp 설치yum install ppp  wget http://poptop.sourceforge.net/yum/beta/packages/pptpd-1.4.0-1.rhel5.1.x86_64.rpm rpm -Uvh pptpd-1.4.0-1.rhel5.1.x86_64.rpm  설정파일 수정vi /etc/pptpd.conf &amp;lt; 파일 맨">
 <meta property="og:locale" content="kr">
-<meta property="og:updated_time" content="2018-01-02T09:39:40.454Z">
+<meta property="og:updated_time" content="2018-01-02T09:45:28.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pptp">
 <meta name="twitter:description" content="pptp 하는 법   pptp 설치yum install ppp  wget http://poptop.sourceforge.net/yum/beta/packages/pptpd-1.4.0-1.rhel5.1.x86_64.rpm rpm -Uvh pptpd-1.4.0-1.rhel5.1.x86_64.rpm  설정파일 수정vi /etc/pptpd.conf &amp;lt; 파일 맨">
@@ -101,7 +101,7 @@
 </li>
 </ol>
 <p>vi  /etc/ppp/options.pptpd</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\#require-mppe-128 &lt;&lt; 주석처리 (안그럼 url 접속안됨)</span><br><span class="line"></span><br><span class="line">ms-dns 8.8.8.8   &lt;dns서버 설정</span><br><span class="line">ms-dns 164.124.101.2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#require-mppe-128 &lt;&lt; 주석처리 (안그럼 url 접속안됨)</span><br><span class="line"></span><br><span class="line">ms-dns 8.8.8.8   &lt;dns서버 설정</span><br><span class="line">ms-dns 164.124.101.2</span><br></pre></td></tr></table></figure>
 <ol>
 <li>계정설정</li>
 </ol>
@@ -113,8 +113,8 @@
 <ol>
 <li>iptables에서 nat 설정</li>
 </ol>
-<p>pptpd.conf &gt; 파일에 설정 해놓은 사설ip (ex 10.0.0.0) 대역을 써줍니다<br>/etc/sysconfig/iptables &gt; 파일에 아래와 같이 작성해주어도 되고<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*nat</span><br><span class="line">:PREROUTING ACCEPT [1:60]</span><br><span class="line">:POSTROUTING ACCEPT [0:0]</span><br><span class="line">:OUTPUT ACCEPT [1:72]</span><br><span class="line">#-A POSTROUTING -o eth0 -j MASQUERADE  &gt; &lt;&lt;또는 이렇게</span><br><span class="line">-A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE</span><br></pre></td></tr></table></figure></p>
-<p>#iptables -t -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE  &gt; &lt;&lt; 명령어로 작성한다음 save 합니다.</p>
+<p>pptpd.conf &gt; 파일에 설정 해놓은 사설ip (ex 10.0.0.0) 대역을 써줍니다<br>/etc/sysconfig/iptables &gt; 파일에 아래와 같이 작성해주어도 되고<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*nat</span><br><span class="line">:PREROUTING ACCEPT [1:60]</span><br><span class="line">:POSTROUTING ACCEPT [0:0]</span><br><span class="line">:OUTPUT ACCEPT [1:72]</span><br><span class="line">#-A POSTROUTING -o eth0 -j MASQUERADE  &lt;&lt;또는 이렇게</span><br><span class="line">-A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE</span><br></pre></td></tr></table></figure></p>
+<p>#iptables -t -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE  &lt;&lt; 명령어로 작성한다음 save 합니다.</p>
 <p>iptables에서 pptp 포트 오픈(아래 포트외에도 vpn client에서 사용할 포트는 vpn 서버에서 열려있어야 됩니다)</p>
 <p>-A RH-Firewall-1-INPUT -p tcp -m state –state NEW -m tcp –dport 1723 -j ACCEPT<br>-A RH-Firewall-1-INPUT -p tcp -m state –state NEW -m tcp –dport 47 -j ACCEPT</p>
 <blockquote>
@@ -124,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chrammingjoo.github.io/2018/01/02/post/" data-id="cjbxg03mf0001puskfhmslr0h" class="article-share-link">Teilen</a>
+      <a data-url="http://chrammingjoo.github.io/2018/01/02/post/" data-id="cjbxg8x5d0002v6skfpwwq7jr" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -134,6 +134,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/01/02/kimtest/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          kimtest
+        
+      </div>
+    </a>
   
   
     <a href="/2018/01/02/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -154,7 +163,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/system/">system</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/db/">db</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/system/">system</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -194,6 +203,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/02/kimtest/">kimtest</a>
+          </li>
         
           <li>
             <a href="/2018/01/02/post/">pptp</a>
