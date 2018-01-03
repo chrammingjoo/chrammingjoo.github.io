@@ -49,9 +49,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://chrammingjoo.github.io"></form>
@@ -61,6 +61,49 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-windows" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/03/windows/" class="article-date">
+  <time datetime="2018-01-03T06:48:16.000Z" itemprop="datePublished">2018-01-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/windows/">windows</a>►<a class="article-category-link" href="/categories/windows/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/03/windows/">윈도우</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>윈도우 카테고리 테스트 입니다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://chrammingjoo.github.io/2018/01/03/windows/" data-id="cjbypdkjk000210skmiok5iuj" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-kimtest" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -93,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chrammingjoo.github.io/2018/01/02/kimtest/" data-id="cjbym6zai0001nrskqq2rdkyu" class="article-share-link">Teilen</a>
+      <a data-url="http://chrammingjoo.github.io/2018/01/02/kimtest/" data-id="cjbypdkjx000510skjjriclgw" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -121,7 +164,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/02/post/">pptp</a>
+      <a class="article-title" href="/2018/01/02/post/">centos7 pptp 설치 및 설정</a>
     </h1>
   
 
@@ -133,22 +176,18 @@
 <li>pptp 설치</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root<span class="comment"># yum install ppp</span></span><br><span class="line"></span><br><span class="line">root<span class="comment"># wget http://poptop.sourceforge.net/yum/beta/packages/pptpd-1.4.0-1.rhel5.1.x86_64.rpm</span></span><br><span class="line">root<span class="comment"># rpm -Uvh pptpd-1.4.0-1.rhel5.1.x86_64.rpm</span></span><br></pre></td></tr></table></figure>
-<p>\2. 설정파일 수정</p>
+<p>2. 설정파일 수정</p>
 <p>vi /etc/pptpd.conf &lt; 파일 맨아래</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">localip 10.0.0.1       &lt;&lt;쓰고 싶은ip</span><br><span class="line">remoteip 10.0.0.2-50   &lt;&lt; 쓰고싶은 ip</span><br></pre></td></tr></table></figure>
-<p>vi  /etc/ppp/options.pptpd</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#require-mppe-128 &lt;&lt; 주석처리 (안그럼 url 접속안됨)</span></span><br><span class="line"></span><br><span class="line">ms-dns 8.8.8.8   &lt;dns서버 설정</span><br><span class="line">ms-dns 164.124.101.2</span><br></pre></td></tr></table></figure>
+<p>localip 10.0.0.1       &lt;&lt;쓰고 싶은ip<br>remoteip 10.0.0.2-50   &lt;&lt; 쓰고싶은 ip</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vi  /etc/ppp/options.pptpd</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line"></span><br><span class="line">#require-mppe-128 &lt;&lt; 주석처리 (안그럼 url 접속안됨)</span><br></pre></td></tr></table></figure>
 <p>3. 계정설정</p>
 <p>/etc/ppp/chap-secrets 파일에 계정 및 패스워드 추가해 준다</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#client    server  secret          IP addresses</span></span><br><span class="line">userid      *    password 		*</span><br><span class="line"></span><br><span class="line">(ID) (VPN서버) (패스워드) (client에 할당할 ip 지정해주어도 되고 *로 놓아도됨 , 지정 해주면 remoteip 에 있는 ip 작성)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>iptables에서 nat 설정</li>
-<li>iptables에서 nat 설정</li>
-</ol>
+<p>4. iptables에서 nat 설정</p>
 <p>pptpd.conf &lt; 파일에 설정 해놓은 사설ip (ex 10.0.0.0) 대역을 써줍니다<br>/etc/sysconfig/iptables &lt; 파일에 아래와 같이 작성해주어도 되고 </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*nat</span><br><span class="line">:PREROUTING ACCEPT [1:60]</span><br><span class="line">:POSTROUTING ACCEPT [0:0]</span><br><span class="line">:OUTPUT ACCEPT [1:72]</span><br><span class="line"><span class="comment">#-A POSTROUTING -o eth0 -j MASQUERADE  &lt;&lt;또는 이렇게</span></span><br><span class="line">-A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE</span><br></pre></td></tr></table></figure>
 <p>또는 명령어로 등록을 해준뒤 iptables-save 를 합니다.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">root<span class="comment"># iptables -t -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="comment"># iptables -t -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE</span></span><br></pre></td></tr></table></figure>
 <p>iptables에서 pptp 포트 오픈(아래 포트외에도 vpn client에서 사용할 포트는 vpn 서버에서 열려있어야 됩니다)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 1723 -j ACCEPT</span><br><span class="line">-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 47 -j ACCEPT</span><br></pre></td></tr></table></figure>
 <p>pptp 재시작 후</p>
@@ -159,10 +198,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chrammingjoo.github.io/2018/01/02/post/" data-id="cjbym6zar0002nrsktr24iwwt" class="article-share-link">Teilen</a>
+      <a data-url="http://chrammingjoo.github.io/2018/01/02/post/" data-id="cjbypdkj7000110skfqr1n5w7" class="article-share-link">Compartir</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pptp/">pptp</a></li></ul>
 
     </footer>
   </div>
@@ -206,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chrammingjoo.github.io/2018/01/02/hello-world/" data-id="cjbym6za50000nrskuttt2wwg" class="article-share-link">Teilen</a>
+      <a data-url="http://chrammingjoo.github.io/2018/01/02/hello-world/" data-id="cjbypdkit000010sk7pkmkr5z" class="article-share-link">Compartir</a>
       
       
     </footer>
@@ -224,9 +263,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
+    <h3 class="widget-title">Categorías</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/db/">db</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/system/">system</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/db/">db</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/system/">system</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/windows/web/">web</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -236,7 +275,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/">centos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pptp/">pptp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a></li></ul>
     </div>
   </div>
 
@@ -244,16 +283,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
-      <a href="/tags/linux/" style="font-size: 10px;">linux</a>
+      <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/pptp/" style="font-size: 10px;">pptp</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
@@ -263,16 +302,20 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/03/windows/">윈도우</a>
+          </li>
         
           <li>
             <a href="/2018/01/02/kimtest/">kimtest</a>
           </li>
         
           <li>
-            <a href="/2018/01/02/post/">pptp</a>
+            <a href="/2018/01/02/post/">centos7 pptp 설치 및 설정</a>
           </li>
         
           <li>
@@ -292,7 +335,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Kim minju.<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
