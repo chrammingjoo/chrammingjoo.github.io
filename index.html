@@ -93,7 +93,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chrammingjoo.github.io/2018/01/02/kimtest/" data-id="cjbyll5000008szskeorkr5k4" class="article-share-link">Teilen</a>
+      <a data-url="http://chrammingjoo.github.io/2018/01/02/kimtest/" data-id="cjbylzzfh0001doskpue5qq45" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -133,19 +133,16 @@
 <li>pptp 설치</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root<span class="comment"># yum install ppp</span></span><br><span class="line"></span><br><span class="line">root<span class="comment"># wget http://poptop.sourceforge.net/yum/beta/packages/pptpd-1.4.0-1.rhel5.1.x86_64.rpm</span></span><br><span class="line">root<span class="comment"># rpm -Uvh pptpd-1.4.0-1.rhel5.1.x86_64.rpm</span></span><br></pre></td></tr></table></figure>
-<ol>
-<li>설정파일 수정</li>
-</ol>
+<p>\2. 설정파일 수정</p>
 <p>vi /etc/pptpd.conf &lt; 파일 맨아래</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">localip 10.0.0.1       &lt;&lt;쓰고 싶은ip</span><br><span class="line">remoteip 10.0.0.2-50   &lt;&lt; 쓰고싶은 ip</span><br></pre></td></tr></table></figure>
 <p>vi  /etc/ppp/options.pptpd</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#require-mppe-128 &lt;&lt; 주석처리 (안그럼 url 접속안됨)</span></span><br><span class="line"></span><br><span class="line">ms-dns 8.8.8.8   &lt;dns서버 설정</span><br><span class="line">ms-dns 164.124.101.2</span><br></pre></td></tr></table></figure>
-<ol>
-<li>계정설정</li>
-</ol>
+<p>3. 계정설정</p>
 <p>/etc/ppp/chap-secrets 파일에 계정 및 패스워드 추가해 준다</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#client    server  secret          IP addresses</span></span><br><span class="line">userid      *    password 		*</span><br><span class="line"></span><br><span class="line">(ID) (VPN서버) (패스워드) (client에 할당할 ip 지정해주어도 되고 *로 놓아도됨 , 지정 해주면 remoteip 에 있는 ip 작성)</span><br></pre></td></tr></table></figure>
 <ol>
+<li>iptables에서 nat 설정</li>
 <li>iptables에서 nat 설정</li>
 </ol>
 <p>pptpd.conf &lt; 파일에 설정 해놓은 사설ip (ex 10.0.0.0) 대역을 써줍니다<br>/etc/sysconfig/iptables &lt; 파일에 아래와 같이 작성해주어도 되고 </p>
@@ -160,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chrammingjoo.github.io/2018/01/02/post/" data-id="cjbyll4yn0000szsk0mgespii" class="article-share-link">Teilen</a>
+      <a data-url="http://chrammingjoo.github.io/2018/01/02/post/" data-id="cjbylzzfo0002dosk03jjjcsg" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -207,7 +204,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://chrammingjoo.github.io/2018/01/02/hello-world/" data-id="cjbyll4zv0007szskhdkvts1s" class="article-share-link">Teilen</a>
+      <a data-url="http://chrammingjoo.github.io/2018/01/02/hello-world/" data-id="cjbylzzf20000dosk1px4zwvs" class="article-share-link">Teilen</a>
       
       
     </footer>
